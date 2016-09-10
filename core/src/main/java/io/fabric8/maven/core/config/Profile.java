@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 /**
- * A profile is a named configuration with ernicher and generator configs.
+ * A profile is a named configuration with enricher and generator configs.
  *
  * @author roland
  * @since 24/07/16

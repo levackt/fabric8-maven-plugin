@@ -22,7 +22,7 @@ The full documentation can be found in the [User Manual](https://fabric8io.githu
 
 * Includes [docker-maven-plugin](https://github.com/fabric8io/docker-maven-plugin) for dealing with Docker images and hence inherits its flexible and powerful configuration.
 * Supports both Kubernetes and OpenShift descriptors
-* OpenShift Docker builds with a binary source (as an alternative to a direct image build agains a Docker daemon)
+* OpenShift Docker builds with a binary source (as an alternative to a direct image built against a Docker daemon)
 * Various configuration styles:
   * **Zero Config** for a quick ramp-up where opinionated defaults will be pre-selected.
   * **Inline Configuration** within the plugin configuration in an XML syntax
@@ -43,4 +43,4 @@ The full documentation can be found in the [User Manual](https://fabric8io.githu
 ### fabric8-maven-plugin 3 vs. 2
 
 > This is a complete rewrite of the former fabric8-maven plugin. It does not share the same configuration syntax,
-> but migration should be straight forward. If no, please contact us at freenode, #fabric8 or open an issue in this project.
+> but migration should be straight forward. If not, please contact us at freenode, #fabric8 or open an issue in this project.

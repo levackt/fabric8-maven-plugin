@@ -45,7 +45,7 @@ abstract public class AbstractLiveEnricher extends BaseEnricher {
     }
 
     /**
-     * Returns true if in offline mode, "false" if not speciied.
+     * Returns true if in offline mode, "false" if not specified.
      * Can be overriden by
      */
     protected boolean isOnline() {
@@ -58,10 +58,10 @@ abstract public class AbstractLiveEnricher extends BaseEnricher {
     }
 
     /**
-     * Return the value to return if no online mode is explicitely specified.
+     * Return the value to return if no online mode is explicitly specified.
      * Can be overridden, by default it returns <code>false</code>.
      *
-     * @return the defaul valuet.
+     * @return the default value.
      */
     protected boolean getDefaultOnline() {
         return false;

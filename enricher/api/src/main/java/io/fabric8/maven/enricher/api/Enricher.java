@@ -30,7 +30,7 @@ import java.util.Map;
 public interface Enricher extends Named {
 
     /**
-     * Get labels to add too objects
+     * Get labels to add to objects
      *
      * @param kind for which type to get the labels
      * @return map of additional labels
