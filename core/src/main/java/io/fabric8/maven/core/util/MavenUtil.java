@@ -180,10 +180,16 @@ public class MavenUtil {
     }
 
     /**
-     * Returns the spring boot `application.properties` or an empty properties object if not found
+     * Returns the spring boot `application.yml` or `application.properties`,
+     * or an empty properties object if not found
      */
     public static Properties getSpringBootApplicationProperties(MavenProject project) {
-        return getPropertiesFile(project, "application.properties");
+        Properties propertiesFile = getPropertiesFile(project, "application.yml");
+
+        if (propertiesFile.isEmpty()) {
+            propertiesFile = getPropertiesFile(project, "application.properties");
+        }
+        return propertiesFile;
     }
 
     /**
