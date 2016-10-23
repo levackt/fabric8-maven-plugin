@@ -83,12 +83,10 @@ public class ClusterAccess {
             mode = PlatformMode.DEFAULT;
         }
         if (mode.isAuto()) {
-            ClusterAccess clusterAccess = new ClusterAccess(namespace);
-            resolvedMode = clusterAccess.isOpenShift(log) ? PlatformMode.openshift : PlatformMode.kubernetes;
+            resolvedMode = isOpenShift(log) ? PlatformMode.openshift : PlatformMode.kubernetes;
         } else {
             resolvedMode = mode;
         }
-        log.info("Running in %s mode", resolvedMode.getLabel());
         return resolvedMode;
     }
 }

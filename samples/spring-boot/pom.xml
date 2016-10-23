@@ -76,6 +76,13 @@
             </labels>
           </resources>
 
+          <generator>
+             <config>
+               <spring-boot>
+                 <color>always</color>
+               </spring-boot>
+             </config>
+          </generator>
           <enricher>
             <excludes>
               <exclude>build</exclude>
@@ -93,6 +100,7 @@
             <goals>
               <goal>resource</goal>
               <goal>build</goal>
+              <goal>helm</goal>
             </goals>
           </execution>
         </executions>

@@ -15,6 +15,11 @@
  */
 
 package io.fabric8.maven.core.config;
+
+import com.google.common.base.Objects;
+
+import java.util.Properties;
+
 /**
  * Mode how to create resouce descriptors
  *
@@ -39,12 +44,8 @@ public enum PlatformMode {
      */
     auto(true, "Auto");
 
-    // TODO see https://github.com/fabric8io/fabric8-maven-plugin/issues/240
-    // we are temporarily switching to kubernetes mode by default
-    // until we can get openshift mode working with Arquillian and Jenkins pipeilnes
-    //
-    // public static final PlatformMode defaultPlatformMode = PlatformMode.auto;
-    public static final PlatformMode DEFAULT = PlatformMode.kubernetes;
+    public static final PlatformMode DEFAULT = PlatformMode.auto;
+    public static final String FABRIC8_EFFECTIVE_PLATFORM_MODE = "fabric8.internal.effective.platform.mode";
 
     private boolean autoFlag;
     private String label;
@@ -60,5 +61,12 @@ public enum PlatformMode {
 
     public String getLabel() {
         return label;
+    }
+
+    /**
+     * Returns true if the given maven properties indicate running in OpenShift platform mode
+     */
+    public static boolean isOpenShiftMode(Properties properties) {
+        return Objects.equal(openshift.toString(), properties.getProperty(FABRIC8_EFFECTIVE_PLATFORM_MODE, ""));
     }
 }

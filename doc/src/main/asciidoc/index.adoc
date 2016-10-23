@@ -1,5 +1,5 @@
 = fabric8io/fabric8-maven-plugin
-Roland Huß;
+Roland Huß, James Strachan;
 :revnumber: {version}
 :revdate: {localdate}
 :toc: macro
@@ -17,21 +17,11 @@ ifdef::basebackend-html[toc::[]]
 
 :numbered:
 
-WARNING: This document is work-in-progress. The most matured chapters are the <<introduction>>, the description of the <<fabric8:build>> goal and the <<generators,Generator>> chapter is growing constantly.
-
 include::inc/_introduction.adoc[]
 
 include::inc/_installation.adoc[]
 
-include::inc/_goals.adoc[]
-
-include::inc/_fabric8-setup.adoc[]
-include::inc/_fabric8-resource.adoc[]
-include::inc/_fabric8-helm.adoc[]
-include::inc/_fabric8-build.adoc[]
-include::inc/_fabric8-push.adoc[]
-include::inc/_fabric8-deploy.adoc[]
-include::inc/_fabric8-watch.adoc[]
+include::inc/goals/_goals.adoc[]
 
 include::inc/_generator.adoc[]
 include::inc/_enricher.adoc[]
@@ -41,5 +31,7 @@ include::inc/_access.adoc[]
 
 include::classpath:/META-INF/doc/dmp/inc/_registry.adoc[]
 include::classpath:/META-INF/doc/dmp/inc/_authentication.adoc[]
+
+include::inc/_migration_2.adoc[]
 
 // include::classpath:/META-INF/doc/dmp/inc/_docker-build.adoc[]

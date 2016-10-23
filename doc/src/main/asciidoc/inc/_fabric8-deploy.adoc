@@ -1,5 +1,0 @@
-
-[[fabric8:deploy]]
-== *fabric8:deploy*
-
-WARNING: This is a placeholder. Will be filled soon.

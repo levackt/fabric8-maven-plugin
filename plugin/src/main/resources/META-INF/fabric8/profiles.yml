@@ -1,7 +1,18 @@
 # Default profiles delivered with f-m-p
 
+# No enrichment at all
+- name: raw
+  enricher:
+    includes: []
 # Use only the Spring Boot generator
 - name: fmp-spring-boot
   generator:
     includes:
       - spring-boot
+# does not expose services by default
+- name: internal-microservice
+  generator:
+    excludes: []
+  enricher:
+    excludes:
+      - expose

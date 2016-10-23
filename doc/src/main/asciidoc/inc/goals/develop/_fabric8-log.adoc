@@ -1,0 +1,33 @@
+
+[[fabric8:log]]
+== *fabric8:log*
+
+This goal tails the log of the app that you deployed via the <<fabric8:deploy>> goal
+
+[source, sh]
+----
+mvn fabric8:log
+----
+
+You can then terminate the output by hitting `Ctrl+C`
+
+If you wish to get the log of the app and then terminate immediately then try:
+
+[source, sh]
+----
+mvn fabric8:log -Dfabric8.log.follow=false
+----
+
+This lets you pipe the output into grep or some other tool
+
+[source, sh]
+----
+mvn fabric8:log -Dfabric8.log.follow=false | grep Exception
+----
+
+If your pod has multiple containers you can configure the container name to log via the `fabric8.log.container` property, otherwise it defaults to the first container:
+
+[source, sh]
+----
+mvn fabric8:log -Dfabric8.log.container=foo
+----

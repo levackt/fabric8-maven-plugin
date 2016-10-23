@@ -1,0 +1,40 @@
+
+[[fabric8:deploy]]
+== *fabric8:deploy*
+
+This is the main goal for building your docker image, generating the kubernetes resources and deploying them into the cluster (insofar your pom.xml is set up correct; keep reading :)).
+
+[source,sh,subs="attributes"]
+----
+mvn fabric8:deploy
+----
+
+This goal is designed to run <<fabric8:build>> and <<fabric8:resource>> before the deploy **iff* you have the goals bound in your pom.xml:
+
+[source,xml,indent=0,subs="verbatim,quotes,attributes"]
+----
+<plugin>
+  <groupId>io.fabric8</groupId>
+  <artifactId>fabric8-maven-plugin</artifactId>
+  <version>{version}</version>
+
+  <!-- Connect fabric8:resource, fabric8:build and fabric8:helm to lifecycle phases -->
+  <executions>
+    <execution>
+       <id>fabric8</id>
+       <goals>
+         <goal>resource</goal>
+         <goal>build</goal>
+         <goal>helm</goal>
+       </goals>
+    </execution>
+  </executions>
+</plugin>
+----
+
+
+Effectively this builds your project then invokes these goals:
+
+* <<fabric8:build>>
+* <<fabric8:resource-apply>>
+
